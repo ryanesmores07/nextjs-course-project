@@ -3,11 +3,22 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const Button = (props) => {
+  console.log(props.children);
+  {
+    props.link && (
+      <Wrapper>
+        <Link href={props.link}>
+          <a className="btn">{props.children}</a>
+        </Link>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
-      <Link href={props.link}>
-        <a className="btn">{props.children}</a>
-      </Link>
+      <button className="btn" onClick={props.onClick}>
+        {props.children}
+      </button>
     </Wrapper>
   );
 };
@@ -16,7 +27,9 @@ const Wrapper = styled.button`
   padding: 0;
   border: 0;
   .btn {
+    display: flex;
     text-decoration: none;
+    align-items: center;
     cursor: pointer;
     font: inherit;
     background-color: #03be9f;

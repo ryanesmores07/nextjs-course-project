@@ -1,6 +1,6 @@
-import EventContent from "./event-content";
-import EventLogistics from "./event-logistics";
-import EventSummary from "./event-summary";
-import LogisticsItem from "./logistics-item";
+import EventContent from "./EventContent";
+import EventLogistics from "./EventLogistics";
+import EventSummary from "./EventSummary";
+import LogisticsItem from "./LogisticsItem";
 
 export { EventContent, EventLogistics, EventSummary, LogisticsItem };

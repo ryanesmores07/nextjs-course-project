@@ -1,6 +1,6 @@
 import AddressIcon from "../icons/address-icon";
 import DateIcon from "../icons/date-icon";
-import LogisticsItem from "./logistics-item";
+import LogisticsItem from "./LogisticsItem";
 import styled from "styled-components";
 
 function EventLogistics(props) {
