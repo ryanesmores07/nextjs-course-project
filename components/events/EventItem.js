@@ -1,7 +1,7 @@
 import React from "react";
 import { AddressIcon, ArrowRightIcon, DateIcon } from "../icons";
 import styled from "styled-components";
-import Button from "../ui/button";
+import Button from "../ui/Button";
 
 const EventItem = (props) => {
   const { title, image, date, location, id } = props;

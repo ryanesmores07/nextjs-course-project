@@ -1,22 +1,34 @@
-import React from "react";
-import Button from "../ui/button";
+import React, { useRef } from "react";
+import Button from "../ui/Button";
 import styled from "styled-components";
 
 const EventsSearch = (props) => {
+  const yearInputRef = useRef();
+  const monthInputRef = useRef();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const selectedYear = yearInputRef.current.value;
+    const selectedMonth = monthInputRef.current.value;
+    console.log(selectedMonth);
+
+    props.onSearch(selectedYear, selectedMonth);
+  };
+
   return (
     <Wrapper>
-      <form className="form">
+      <form className="form" onSubmit={submitHandler}>
         <div className="controls">
           <div className="control">
             <label htmlFor="year">Year</label>
-            <select id="year">
+            <select id="year" ref={yearInputRef}>
               <option value="2021">2021</option>
               <option value="2022">2022</option>
             </select>
           </div>
           <div className="control">
             <label htmlFor="month">Month</label>
-            <select id="month">
+            <select id="month" ref={monthInputRef}>
               <option value="1">January</option>
               <option value="2">February</option>
               <option value="3">March</option>
@@ -32,7 +44,7 @@ const EventsSearch = (props) => {
             </select>
           </div>
         </div>
-        <Button>Find Events</Button>
+        <Button>Find Event</Button>
       </form>
     </Wrapper>
   );
@@ -50,7 +62,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
   }
 
   .controls {
@@ -80,7 +92,7 @@ const Wrapper = styled.div`
     padding: 0.25rem;
   }
 
-  .form button {
+  /* .form .btn {
     width: 100%;
     font: inherit;
     padding: 0.25rem 0.5rem;
@@ -88,7 +100,7 @@ const Wrapper = styled.div`
     border: 1px solid #03be9f;
     color: #dafff7;
     border-radius: 4px;
-  }
+  } */
 
   @media (min-width: 768px) {
     .form {
@@ -104,9 +116,9 @@ const Wrapper = styled.div`
       width: 100%;
     }
 
-    .form button {
+    /* .form button {
       width: 20%;
-    }
+    } */
   }
 `;
 
