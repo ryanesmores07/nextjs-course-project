@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { AddressIcon, ArrowRightIcon, DateIcon } from "../icons";
 import styled from "styled-components";
 import Button from "../ui/Button";
@@ -18,7 +19,8 @@ const EventItem = (props) => {
   return (
     <Wrapper>
       <li className="item">
-        <img src={"/" + image} alt={title} />
+        {/* <img src={"/" + image} alt={title} /> */}
+        <Image src={"/" + image} alt={title} width={250} height={160} />
         <div className="content">
           <div className="summary">
             <h2>{title}</h2>

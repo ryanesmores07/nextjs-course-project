@@ -1,4 +1,5 @@
 import AddressIcon from "../icons/address-icon";
+import Image from "next/image";
 import DateIcon from "../icons/date-icon";
 import LogisticsItem from "./LogisticsItem";
 import styled from "styled-components";
@@ -17,7 +18,8 @@ function EventLogistics(props) {
     <Wrapper>
       <section className="logistics">
         <div className="image">
-          <img src={`/${image}`} alt={imageAlt} />
+          {/* <img src={`/${image}`} alt={imageAlt} /> */}
+          <Image src={`/${image}`} alt={imageAlt} width={300} height={300} />
         </div>
         <ul className="list">
           <LogisticsItem icon={DateIcon}>
