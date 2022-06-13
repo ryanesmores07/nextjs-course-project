@@ -8,6 +8,7 @@ import {
   LogisticsItem,
 } from "../../components/event-detail";
 import ErrorAlert from "../../components/ui/ErrorAlert";
+import Comments from "../../components/input/Comment";
 
 const EventDetailPage = ({ selectedEvent }) => {
   const event = selectedEvent;
@@ -36,6 +37,7 @@ const EventDetailPage = ({ selectedEvent }) => {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   );
 };

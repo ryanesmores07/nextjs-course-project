@@ -24,6 +24,14 @@ export async function getEventById(id) {
   return allEvents.find((event) => event.id === id);
 }
 
+export async function getAllDocuments(client, collection, sort, filter = {}) {
+  const documents = await db
+    .collection(collection)
+    .find(filter) // this changed - we use the "filter" parameter!
+    .sort(sort)
+    .toArray();
+}
+
 export async function getFilteredEvents(dateFilter) {
   const { year, month } = dateFilter;
   const allEvents = await getAllEvents();
